@@ -1,15 +1,62 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SEARCH OPTIONS
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Jump to search result when typing
+set incsearch
+" Highlight all found results
+set hlsearch
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VISUAL OPTIONS
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Show line number
+set number
+" Show horizontal ruler (line and  symbol number)
+set ruler
+" Show all characters
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" Show whitespace characters
+set list
+" Save indentetion from previous line when <CR>
+set autoindent
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
-set number
-set autoindent
-set incsearch
-set hlsearch
+" Open NERDTree
+map <F4> :NERDTreeToggle<CR>
+imap <F4> <Esc>:NERDTreeToggle<CR>
+vmap <F4> <Esc>:NERDTreeToggle<CR>
 
-" Show all characters
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" WINDONWS
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Window resizing
+map <F5> <C-W><
+map <F6> <C-W>>
+map <F7> <C-W>+
+map <F8> <C-W>-
+" Full size
+map <F3> <ESC>:vertical resize<cr>:resize<cr>
+" Equal size
+map <F10> <ESC><C-w>=
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Probaby has to be deleted!
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set colorschema using function
 function SetColorScheme()

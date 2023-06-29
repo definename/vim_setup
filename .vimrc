@@ -1,7 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SEARCH OPTIONS
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Jump to search result when typing
 set incsearch
@@ -10,9 +8,9 @@ set hlsearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VISUAL OPTIONS
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Relative line number"
+" set rnu
 " Show line number
 set number
 " Show horizontal ruler (line and  symbol number)
@@ -26,12 +24,20 @@ set autoindent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" CTRLP
+
+" Turn off ctrlp cwd feature
+let g:ctrlp_working_path_mode = 0
+
+" NERDTree
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+" autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Open NERDTree
 map <F4> :NERDTreeToggle<CR>
@@ -40,8 +46,6 @@ vmap <F4> <Esc>:NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " WINDONWS
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Window resizing
 map <F5> <C-W><
@@ -55,8 +59,6 @@ map <F10> <ESC><C-w>=
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Probaby has to be deleted!
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set colorschema using function
 function SetColorScheme()

@@ -2,7 +2,7 @@
 
 install.sh local - install all plugins from locally stored *tar.gz
 
-install.sh remote - install all plugins from from github repository
+install.sh remote - install all plugins from github repository
 
 # vim plugins
 
